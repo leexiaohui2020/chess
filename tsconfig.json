@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "CommonJs",
+    "target": "ESNext",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "typings"
+  },
+  "files": [
+    "src/main.ts"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ]
+}
