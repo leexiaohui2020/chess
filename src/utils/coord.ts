@@ -23,3 +23,24 @@ export function getColor(label: string) {
   }
   return ChessColor.BLACK
 }
+
+export function getCoordCN(num: number, color: ChessColor) {
+  if (color === ChessColor.BLACK) return coordNumMap[num]
+  return coordCNMap[8 - num]
+}
+
+export function getCNNumber(num: number) {
+  return '零一二三四五六七八九'[num]
+}
+
+export function getNumber(num: string) {
+  if (coordNumMap.includes(num)) {
+    return coordNumMap.indexOf(num) + 1
+  }
+
+  if (coordCNMap.includes(num)) {
+    return coordCNMap.indexOf(num) + 1
+  }
+
+  return 0
+}

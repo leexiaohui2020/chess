@@ -29,3 +29,8 @@ export interface Action {
   moveTo?: boolean;
   content: (item: Chess, num: number) => void;
 }
+
+export enum EventMap {
+  CHESS_EAT = 'CHESS_EAT',
+  CHESS_MOVE = 'CHESS_MOVE',
+}

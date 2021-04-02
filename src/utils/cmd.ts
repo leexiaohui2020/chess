@@ -1,5 +1,5 @@
 import { ActionLabel, ChessName } from "../types"
-import { getColor, getCoord } from "./coord"
+import { getColor, getCoord, getNumber } from "./coord"
 
 export function resolvePrefix(cmd: string) {
   if (cmd.length !== 2) {
@@ -7,6 +7,13 @@ export function resolvePrefix(cmd: string) {
   }
 
   const [name, co] = cmd.split('')
+
+  if ('前后一二三四五'.includes(name)) {
+
+    return {
+      name: co as ChessName,
+    }
+  }
 
   return {
     name: name as ChessName,
@@ -23,7 +30,7 @@ export function resolveSuffix(cmd: string) {
   const [label, co] = cmd.split('')
 
   return {
-    co: getCoord(co),
+    co: getNumber(co),
     color: getColor(co),
     label: label as ActionLabel,
   }

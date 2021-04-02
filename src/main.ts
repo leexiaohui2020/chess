@@ -1,14 +1,13 @@
+import AI from './elements/ai'
 import Chess from './elements/chess'
+import Player from './elements/player'
 import Chessboard from './elements/chessboard'
-export { Chess, Chessboard }
+
+export { Chess, Chessboard, Player, AI }
 
 // TestCode
 const chessboard = new Chessboard()
-// console.log(chessboard.findChessByName('兵').length)
-// console.log(chessboard.findChess('帅五'))
-
-const chess = chessboard.findChess('炮二')
-console.log(chess.name, chess.x, chess.y)
-chessboard.exec('炮二平五')
-console.log(chess.name, chess.x, chess.y)
-chessboard.exec('炮二平五')
+const playerA = new AI()
+const playerB = new AI()
+chessboard.ready(playerA, playerB)
+chessboard.start()
